@@ -6,9 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 // annotation to tell "jakarta" we want this class as Table in DB 
 @Entity
 // annotation to define the Table name in DB
@@ -29,27 +32,4 @@ public class Employee {
 	
 	@Column(name = "email")
 	private String email;
-	
-	/*
-	 * we have add getter and setter to send and receive the value for this table*/
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	
 }
